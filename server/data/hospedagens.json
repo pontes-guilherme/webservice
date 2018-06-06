@@ -1,0 +1,12 @@
+{
+    "1": {
+        "destino": "São Paulo",
+        "nome": "Nome hotel 1",
+        "vagas": "50"
+    },
+    "2": {
+        "destino": "Rio de Janeiro",
+        "nome": "Nome hotel 2",
+        "vagas": "22"
+    }
+}
