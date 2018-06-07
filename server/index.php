@@ -8,7 +8,13 @@ require 'config.php';
 require 'functions.php';
 require 'handlers.php';
 
-$app = new \Slim\App;
+$configuration = [
+    'settings' => [
+        'displayErrorDetails' => true,
+    ],
+];
+$c = new \Slim\Container($configuration);
+$app = new \Slim\App($c);
 
 //Routes
 /**
@@ -28,9 +34,21 @@ $app->get('/passagem', function (Request $request, Response $response) {
  * 
  * @return string conteúdo no formato JSON
  */
-$app->get('/passagem/{id}', function (Request $request, Response $response, array $args) {
+$app->get('/passagem/{id:[0-9]+}', function (Request $request, Response $response, array $args) {
     $response->withHeader('Content-Type', 'application/json');
     $response->getBody()->write(get_passagem($args['id']));
+
+    return $response;
+});
+
+/**
+ * GET /passagem/{key}/{value}
+ * 
+ * @return string conteúdo filtrado, no formato JSON
+ */
+$app->get('/passagem/{key}/{value}', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-Type', 'application/json');
+    $response->getBody()->write(search_passagem($args['key'], $args['value']));
 
     return $response;
 });
@@ -61,9 +79,21 @@ $app->get('/hospedagem', function (Request $request, Response $response) {
  * 
  * @return string conteúdo no formato JSON
  */
-$app->get('/hospedagem/{id}', function (Request $request, Response $response, array $args) {
+$app->get('/hospedagem/{id:[0-9]+}', function (Request $request, Response $response, array $args) {
     $response->withHeader('Content-Type', 'application/json');
     $response->getBody()->write(get_hospedagem($args['id']));
+
+    return $response;
+});
+
+/**
+ * GET /hospedagem/{key}/{value}
+ * 
+ * @return string conteúdo filtrado, no formato JSON
+ */
+$app->get('/hospedagem/{key}/{value}', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-Type', 'application/json');
+    $response->getBody()->write(search_hospedagem($args['key'], $args['value']));
 
     return $response;
 });
