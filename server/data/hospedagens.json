@@ -2,6 +2,11 @@
     "1": {
         "cidade": "Curitiba",
         "nome": "Maçã Apimentada",
-        "quartos": "50"
+        "vagas": "50"
+    },
+    "2": {
+        "cidade": "São Paulo",
+        "nome": "Maçã Adocicada",
+        "vagas": "20"
     }
 }

@@ -46,50 +46,15 @@ function search_passagem($key, $value) {
 function post_passagem($data) {
     /*
     {
-        'origem'        : '1', //inteiro - id da origem
-        'destino'       : '2', //inteiro - id do destino
-        'data'          : '15/12/2018 13:00:00', //formato dd/mm/yyyy hh:ii:ss
-        'quantidade'    : '10', //inteiro (número de pessoas)
+        'id'            : '1', //inteiro - id da origem
+        'n_pessoas'     : '10', //inteiro (número de pessoas)
         'cartao'        : 'xxxxxxxxxxxxx', //string - número do cartao fictício
         'parcelas'      : '12', //inteiro
     }
     */
 
-    /*
-    {
-        '1' : {
-            'cidade' : 'Curitiba',
-            'destino': {
-                '1' : {
-                    'cidade': São Paulo,
-                    'data_hora': {
-                        'xx/xx/xxxx xx:xx:xx' : 10 //vagas
-                        'xx/xx/xxxx xx:xx:xx' : 20
-                    }
-                }
-            }
-        },
-        '2' : {
-            'cidade' : 'São Paulo',
-            'destino': {
-                '1' : {
-                    'cidade': Curitiba,
-                    'data_hora': {
-                        'xx/xx/xxxx xx:xx:xx' : 2 //vagas
-                    }
-                },
-                '2' : {
-                    'cidade': Rio de Janeiro,
-                    'data_hora': {
-                        ''
-                    }
-                }
-            }
-        }
-    }
-    */
-
     $passagensFile = PASSAGENS_FILE;
+    $compraPassagensFile = COMPRA_PASSAGENS_FILE;
 
     $content = read_file($passagensFile);
     $passagens = json_decode($content, true);
@@ -100,20 +65,53 @@ function post_passagem($data) {
         ));
     }
 
-    /* Caso a origem não exista */
-    if (!isset($passagens[$dados['origem']])) {
+    /* Caso a passagem não exista */
+    if (!isset($passagens[$dados['id']])) {
         return json_encode(array(
-            "erro" => "Origem não existente!"
+            "erro" => "Passagem não encontrada"
         ));
     }
 
-    /* Caso o destino não exista */
-    if (!isset($passagens[$dados['destino']])) {
+    $passagem = $passagens[$dados['id']];
+
+    /* Verifica vagas disponíveis */
+    if ($dados['n_pessoas'] > $passagem['vagas']) {
         return json_encode(array(
-            "erro" => "Destino não existente!"
+            "erro" => "Não há vagas suficientes"
         ));
     }
 
+    /* Cria registro de compra */
+    $compra = array_merge($dados, array(
+        'data_hora_compra' => date('d/m/Y H:i:s')
+    ));
+
+    $contentCompras = read_file($compraPassagensFile);
+    $compras = json_decode($content, true);
+    $compras = array_merge($compras, $compra);
+
+    /* Calcula vagas restantes */
+    $vagasRestantes = $passagem['vagas'] - $dados['n_pessoas'];
+    $passagens[$dados['id']]['vagas'] = $vagasRestantes;
+
+    /* Atualiza o arquivo de passagens com as vagas atualizadas */
+    if (!write_file($passagensFile, $passagens)) {
+        return json_encode(array(
+            "erro" => "Erro ao atualizar vagas"
+        ));
+    }
+
+    /* Registra a compra */
+    if (!write_file($compraPassagensFile, $compras)) {
+        return json_encode(array(
+            "erro" => "Erro ao efetuar compra"
+        ));
+    }
+
+    /* mensagem de sucesso */
+    return json_encode(array(
+        "sucesso" => "Compra efetuada com sucesso!"
+    ));
 
 }
 
@@ -163,5 +161,72 @@ function search_hospedagem($key, $value) {
 }
 
 function post_hospedagem($data) {
-    
+    /*
+    {
+        'id'            : '1', //inteiro - id da origem
+        'n_pessoas'     : '10', //inteiro (número de pessoas)
+        'cartao'        : 'xxxxxxxxxxxxx', //string - número do cartao fictício
+        'parcelas'      : '12', //inteiro
+    }
+    */
+
+    $hospedagemFile = HOSPEDAGEM_FILE;
+    $compraHospedagensFile = COMPRA_HOSPEDAGEM_FILE;
+
+    $content = read_file($hospedagemFile);
+    $hospedagens = json_decode($content, true);
+
+    if (!$data) {
+        return json_encode(array(
+            "erro" => "Dados enviados incorretamente!"
+        ));
+    }
+
+    /* Caso a passagem não exista */
+    if (!isset($hospedagens[$dados['id']])) {
+        return json_encode(array(
+            "erro" => "Passagem não encontrada"
+        ));
+    }
+
+    $hospedagem = $hospedagens[$dados['id']];
+
+    /* Verifica vagas disponíveis */
+    if ($dados['n_pessoas'] > $hospedagem['vagas']) {
+        return json_encode(array(
+            "erro" => "Não há vagas suficientes"
+        ));
+    }
+
+    /* Cria registro de compra */
+    $compra = array_merge($dados, array(
+        'data_hora_compra' => date('d/m/Y H:i:s')
+    ));
+
+    $contentCompras = read_file($compraHospedagensFile);
+    $compras = json_decode($content, true);
+    $compras = array_merge($compras, $compra);
+
+    /* Calcula vagas restantes */
+    $vagasRestantes = $hospedagem['vagas'] - $dados['n_pessoas'];
+    $hospedagens[$dados['id']]['vagas'] = $vagasRestantes;
+
+    /* Atualiza o arquivo de passagens com as vagas atualizadas */
+    if (!write_file($hospedagensFile, $hospedagens)) {
+        return json_encode(array(
+            "erro" => "Erro ao atualizar vagas"
+        ));
+    }
+
+    /* Registra a compra */
+    if (!write_file($compraHospedagensFile, $compras)) {
+        return json_encode(array(
+            "erro" => "Erro ao efetuar compra"
+        ));
+    }
+
+    /* mensagem de sucesso */
+    return json_encode(array(
+        "sucesso" => "Compra efetuada com sucesso!"
+    ));
 }

@@ -54,11 +54,17 @@ $app->get('/passagem/{key}/{value}', function (Request $request, Response $respo
     return $response;
 });
 
+/**
+ * POST /passagem/comprar
+ * 
+ * @return string conteúdo resultante da requisição de compra
+ */
 $app->post('/passagem/comprar', function (Request $request, Response $response) {
 
     $params = $request->getParsedBody();
     $response->withHeader('Content-Type', 'application/json');
-    $response->getBody()->write(json_encode($params));
+    /*$response->getBody()->write(json_encode($params));*/
+    $response->getBody()->write(post_passagem($params));
 
     return $response;
 });
@@ -98,5 +104,21 @@ $app->get('/hospedagem/{key}/{value}', function (Request $request, Response $res
 
     return $response;
 });
+
+/**
+ * POST /hospedagem/comprar
+ * 
+ * @return string conteúdo resultante da requisição de compra
+ */
+$app->post('/hospedagem/comprar', function (Request $request, Response $response) {
+
+    $params = $request->getParsedBody();
+    $response->withHeader('Content-Type', 'application/json');
+    /*$response->getBody()->write(json_encode($params));*/
+    $response->getBody()->write(post_hospedagem($params));
+
+    return $response;
+});
+
 
 $app->run();

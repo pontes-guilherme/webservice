@@ -1,31 +1,14 @@
 {
     "1" : {
-        "cidade" : "Curitiba",
-        "destino": {
-            "1" : {
-                "cidade": "São Paulo",
-                "data_hora": {
-                    "xx/xx/xxxx xx:xx:xx" : "10",
-                    "xx/xx/xxxx xx:xx:xx" : "20"
-                }
-            }
-        }
+        "origem" : "Curitiba",
+        "destino": "São Paulo",
+        "data": "20/06/2018",
+        "vagas": 50,
     },
     "2" : {
-        "cidade" : "São Paulo",
-        "destino": {
-            "1" : {
-                "cidade": "Curitiba",
-                "data_hora": {
-                    "xx/xx/xxxx xx:xx:xx" : "2"
-                }
-            },
-            "2" : {
-                "cidade": "Rio de Janeiro",
-                "data_hora": {
-                    
-                }
-            }
-        }
+        "origem" : "Amazonas",
+        "destino": "São Paulo",
+        "data": "25/06/2018",
+        "vagas": 30,
     }
 }
