@@ -13,6 +13,7 @@ $configuration = [
         'displayErrorDetails' => true,
     ],
 ];
+
 $c = new \Slim\Container($configuration);
 $app = new \Slim\App($c);
 
