@@ -17,7 +17,7 @@ def main():
             func.enter_to_continue()
 
         elif opt == "3": #comprar passagem
-            json = {'teste': 'aabbcc'}  
+            json = {'id': '1', 'n_pessoas': '10', 'cartao': 'xxx', 'parcelas':'12'}  
             req.handle_list_response(req.send_post(req.URL_POST_PASSAGEM, json=json))
             func.enter_to_continue()
 
@@ -31,7 +31,9 @@ def main():
             func.enter_to_continue()
 
         elif opt == "6": #comprar hospedagem
-            pass    
+            json = {'id': '1', 'n_pessoas': '10', 'cartao': 'xxx', 'parcelas':'12'}   
+            req.handle_list_response(req.send_post(req.URL_POST_HOSPEDAGEM, json=json))
+            func.enter_to_continue()
 
         else:
             print("Opção inválida")

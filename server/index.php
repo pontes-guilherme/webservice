@@ -4,6 +4,9 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
+
+require 'Logging.php';
+
 require 'config.php';
 require 'functions.php';
 require 'handlers.php';
@@ -38,7 +41,7 @@ $app->get('/passagem', function (Request $request, Response $response) {
 $app->get('/passagem/{id:[0-9]+}', function (Request $request, Response $response, array $args) {
     $response->withHeader('Content-Type', 'application/json');
     $response->getBody()->write(get_passagem($args['id']));
-
+    
     return $response;
 });
 
@@ -65,6 +68,7 @@ $app->post('/passagem/comprar', function (Request $request, Response $response) 
     $response->withHeader('Content-Type', 'application/json');
     /*$response->getBody()->write(json_encode($params));*/
     $response->getBody()->write(post_passagem($params));
+    //criaLog(post_passagem($params));
 
     return $response;
 });

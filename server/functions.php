@@ -29,9 +29,19 @@ function write_file($filePath, $content) {
         return false;
 
     $fp = fopen($filePath, 'w');
-    fwrite($fp, json_encode($response));
+    fwrite($fp, json_encode($content));
     fclose($fp);
 
     return true;
 }
 
+function criaLog($content, $file = 'log.txt') {
+    // Logging class initialization
+    $log = new Logging();
+    // set path and name of log file (optional)
+    $log->lfile($file);
+    // write message to the log file
+    $log->lwrite($content);
+    // close log file
+    $log->lclose();
+}

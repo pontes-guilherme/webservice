@@ -7,7 +7,7 @@ class Requests:
     URL_POST_PASSAGEM = 'http://localhost/pacotes/server/passagem/comprar'
 
     URL_GET_HOSPEDAGEM = 'http://localhost/pacotes/server/hospedagem'
-    URL_POST_HOSPEDAGEM = 'http://localhost/pacotes/server/passagem/comprar'
+    URL_POST_HOSPEDAGEM = 'http://localhost/pacotes/server/hospedagem/comprar'
 
     @staticmethod
     def send_post(addr, json):
