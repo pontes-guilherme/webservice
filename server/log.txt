@@ -1,0 +1,28 @@
+[09/Jun/2018:00:39:17] (index) passagem => Não há vagas suficientes
+[09/Jun/2018:00:39:33] (index) passagem => Compra efetuada com sucesso
+[09/Jun/2018:00:40:48] (index) passagem => Não há vagas suficientes
+[09/Jun/2018:00:41:29] (index) passagem => Compra efetuada com sucesso
+[09/Jun/2018:00:48:39] (index) passagem => Não há vagas suficientes
+[09/Jun/2018:00:49:22] (index) passagem => Não há vagas suficientes
+[09/Jun/2018:00:51:27] (index) passagem => Não há vagas suficientes
+[09/Jun/2018:00:51:52] (index) passagem => Não há vagas suficientes
+[09/Jun/2018:00:56:44] (index) hospedagem => Hospedagem não encontrada
+[09/Jun/2018:01:03:26] (index) hospedagem => Hospedagem não encontrada
+[09/Jun/2018:01:06:41] (index) hospedagem => Hospedagem não encontrada
+[09/Jun/2018:01:07:24] (index) null
+[09/Jun/2018:01:07:24] (index) hospedagem => Hospedagem não encontrada
+[09/Jun/2018:01:08:23] (index) 
+[09/Jun/2018:01:08:23] (index) null
+[09/Jun/2018:01:08:23] (index) hospedagem => Hospedagem não encontrada
+[09/Jun/2018:01:09:30] (index) hospedagem => Erro ao atualizar vagas
+[09/Jun/2018:01:11:58] (index) {"1":{"cidade":"Curitiba","nome":"Ma\u00e7\u00e3 Apimentada","vagas":40},"2":{"cidade":"S\u00e3o Paulo","nome":"Ma\u00e7\u00e3 Adocicada","vagas":"20"}}
+[09/Jun/2018:01:11:58] (index) hospedagem => Erro ao atualizar vagas
+[09/Jun/2018:01:14:05] (index) {"1":{"cidade":"Curitiba","nome":"Ma\u00e7\u00e3 Apimentada","vagas":40},"2":{"cidade":"S\u00e3o Paulo","nome":"Ma\u00e7\u00e3 Adocicada","vagas":"20"}}
+[09/Jun/2018:01:14:05] (index) hospedagem => Compra efetuada com sucesso!
+[10/Jun/2018:11:33:59] (index) passagem => Não há vagas suficientes
+[10/Jun/2018:11:34:22] (index) passagem => Passagem não encontrada
+[10/Jun/2018:11:34:42] (index) passagem => Compra efetuada com sucesso
+[10/Jun/2018:11:34:53] (index) passagem => Compra efetuada com sucesso
+[10/Jun/2018:11:39:06] (index) hospedagem => Compra efetuada com sucesso!
+[10/Jun/2018:12:11:34] (index) hospedagem => Número de parcelas incorreto!
+[10/Jun/2018:12:17:31] (index) hospedagem => Compra efetuada com sucesso

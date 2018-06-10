@@ -125,4 +125,29 @@ $app->post('/hospedagem/comprar', function (Request $request, Response $response
 });
 
 
+/**
+ * GET /passagem/compra/{id}
+ * 
+ * @return string conteúdo no formato JSON
+ */
+$app->get('/compras/passagem/{id}', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-Type', 'application/json');
+    $response->getBody()->write(get_compra_passagem($args['id']));
+
+    return $response;
+});
+
+/**
+ * GET /hospedagem/compra/{id}
+ * 
+ * @return string conteúdo no formato JSON
+ */
+$app->get('/compras/hospedagem/{id}', function (Request $request, Response $response, array $args) {
+    $response->withHeader('Content-Type', 'application/json');
+    $response->getBody()->write(get_compra_hospedagem($args['id']));
+
+    return $response;
+});
+
+
 $app->run();

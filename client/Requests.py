@@ -9,6 +9,9 @@ class Requests:
     URL_GET_HOSPEDAGEM = 'http://localhost/pacotes/server/hospedagem'
     URL_POST_HOSPEDAGEM = 'http://localhost/pacotes/server/hospedagem/comprar'
 
+    URL_GET_COMPRA_PASSAGEM = 'http://localhost/pacotes/server/compras/passagem'
+    URL_GET_COMPRA_HOSPEDAGEM = 'http://localhost/pacotes/server/compras/hospedagem'
+
     @staticmethod
     def send_post(addr, json):
         """Manda um JSON via POST para uma url

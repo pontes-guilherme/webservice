@@ -1,0 +1,46 @@
+[08-Jun-2018 23:14:09 America/Sao_Paulo] PHP Notice:  Undefined variable: dados in C:\xampp\htdocs\pacotes\server\handlers.php on line 69
+[08-Jun-2018 23:19:25 America/Sao_Paulo] PHP Fatal error:  Cannot redeclare log() in C:\xampp\htdocs\pacotes\server\functions.php on line 47
+[08-Jun-2018 23:22:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\pacotes\server\Logging.php on line 51
+[08-Jun-2018 23:23:14 America/Sao_Paulo] PHP Fatal error:  Cannot redeclare log() in C:\xampp\htdocs\pacotes\server\functions.php on line 47
+[08-Jun-2018 23:25:08 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\pacotes\server\Logging.php on line 30
+[08-Jun-2018 23:25:08 America/Sao_Paulo] PHP Notice:  Undefined variable: dados in C:\xampp\htdocs\pacotes\server\handlers.php on line 71
+[08-Jun-2018 23:26:08 America/Sao_Paulo] PHP Notice:  Undefined variable: dados in C:\xampp\htdocs\pacotes\server\handlers.php on line 71
+[08-Jun-2018 23:45:44 America/Sao_Paulo] PHP Notice:  Undefined variable: dados in C:\xampp\htdocs\pacotes\server\handlers.php on line 70
+[08-Jun-2018 23:47:51 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 80
+[08-Jun-2018 23:47:51 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 97
+[08-Jun-2018 23:47:51 America/Sao_Paulo] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\pacotes\server\functions.php on line 32
+[08-Jun-2018 23:47:51 America/Sao_Paulo] PHP Notice:  Undefined variable: response in C:\xampp\htdocs\pacotes\server\functions.php on line 32
+[08-Jun-2018 23:59:48 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 80
+[08-Jun-2018 23:59:48 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 97
+[09-Jun-2018 00:03:12 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 80
+[09-Jun-2018 00:03:12 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 97
+[09-Jun-2018 00:08:43 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 80
+[09-Jun-2018 00:08:43 America/Sao_Paulo] PHP Warning:  array_merge(): Argument #1 is not an array in C:\xampp\htdocs\pacotes\server\handlers.php on line 94
+[09-Jun-2018 00:08:43 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 97
+[09-Jun-2018 00:13:12 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 80
+[09-Jun-2018 00:13:12 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 97
+[09-Jun-2018 00:16:32 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 80
+[09-Jun-2018 00:16:32 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 97
+[09-Jun-2018 00:16:32 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 100
+[09-Jun-2018 00:51:57 America/Sao_Paulo] PHP Warning:  Use of undefined constant HOSPEDAGEM_FILE - assumed 'HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 181
+[09-Jun-2018 00:51:57 America/Sao_Paulo] PHP Warning:  Use of undefined constant COMPRA_HOSPEDAGEM_FILE - assumed 'COMPRA_HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 182
+[09-Jun-2018 00:56:44 America/Sao_Paulo] PHP Warning:  Use of undefined constant HOSPEDAGEM_FILE - assumed 'HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 181
+[09-Jun-2018 00:56:44 America/Sao_Paulo] PHP Warning:  Use of undefined constant COMPRA_HOSPEDAGEM_FILE - assumed 'COMPRA_HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 182
+[09-Jun-2018 01:03:26 America/Sao_Paulo] PHP Warning:  Use of undefined constant HOSPEDAGEM_FILE - assumed 'HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 181
+[09-Jun-2018 01:03:26 America/Sao_Paulo] PHP Warning:  Use of undefined constant COMPRA_HOSPEDAGEM_FILE - assumed 'COMPRA_HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 182
+[09-Jun-2018 01:06:41 America/Sao_Paulo] PHP Warning:  Use of undefined constant HOSPEDAGEM_FILE - assumed 'HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 181
+[09-Jun-2018 01:06:41 America/Sao_Paulo] PHP Warning:  Use of undefined constant COMPRA_HOSPEDAGEM_FILE - assumed 'COMPRA_HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 182
+[09-Jun-2018 01:07:24 America/Sao_Paulo] PHP Warning:  Use of undefined constant HOSPEDAGEM_FILE - assumed 'HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 181
+[09-Jun-2018 01:07:24 America/Sao_Paulo] PHP Warning:  Use of undefined constant COMPRA_HOSPEDAGEM_FILE - assumed 'COMPRA_HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 182
+[09-Jun-2018 01:08:23 America/Sao_Paulo] PHP Warning:  Use of undefined constant HOSPEDAGEM_FILE - assumed 'HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 181
+[09-Jun-2018 01:08:23 America/Sao_Paulo] PHP Warning:  Use of undefined constant COMPRA_HOSPEDAGEM_FILE - assumed 'COMPRA_HOSPEDAGEM_FILE' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\pacotes\server\handlers.php on line 182
+[09-Jun-2018 01:09:30 America/Sao_Paulo] PHP Notice:  Undefined variable: hospedagensFile in C:\xampp\htdocs\pacotes\server\handlers.php on line 225
+[09-Jun-2018 01:11:58 America/Sao_Paulo] PHP Notice:  Undefined variable: hospedagensFile in C:\xampp\htdocs\pacotes\server\handlers.php on line 225
+[10-Jun-2018 11:39:06 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 204
+[10-Jun-2018 11:39:06 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 221
+[10-Jun-2018 12:11:34 America/Sao_Paulo] PHP Notice:  Undefined index: n_pessoas in C:\xampp\htdocs\pacotes\server\handlers.php on line 208
+[10-Jun-2018 12:43:05 America/Sao_Paulo] PHP Notice:  Undefined index: compra in C:\xampp\htdocs\pacotes\server\handlers.php on line 32
+[10-Jun-2018 12:43:05 America/Sao_Paulo] PHP Notice:  Undefined index: compra in C:\xampp\htdocs\pacotes\server\handlers.php on line 32
+[10-Jun-2018 12:55:37 America/Sao_Paulo] PHP Notice:  Undefined index: aaaa in C:\xampp\htdocs\pacotes\server\handlers.php on line 203
+[10-Jun-2018 12:57:07 America/Sao_Paulo] PHP Notice:  Undefined index: asdas in C:\xampp\htdocs\pacotes\server\handlers.php on line 203
+[10-Jun-2018 12:58:19 America/Sao_Paulo] PHP Notice:  Undefined index: aaa in C:\xampp\htdocs\pacotes\server\handlers.php on line 203

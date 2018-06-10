@@ -35,6 +35,31 @@ function write_file($filePath, $content) {
     return true;
 }
 
+/**
+ * Generates a random code 
+ *
+ * @param integer $size The size of the code
+ * @return string the generated code
+ */
+function generateCode($size=10) {
+    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    $pass = array(); //remember to declare $pass as an array
+    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+    for ($i = 0; $i < $size; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass); //turn the array into a string
+}
+
+/**
+ * Creates a log file
+ * 
+ * @param [String] The log's content
+ * @param [String] The file's name
+ * 
+ * @return void
+ */
 function criaLog($content, $file = 'log.txt') {
     // Logging class initialization
     $log = new Logging();

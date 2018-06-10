@@ -25,7 +25,9 @@ class Functions:
         print("3 - Comprar passagem:")
         print("4 - Listar hospedagens")
         print("5 - Informações da hospedagem (informando id):")
-        print("3 - Comprar hospedagem")
+        print("6 - Comprar hospedagem")
+        print("7 - Consultar compra de passagem (informando código):")
+        print("8 - Consultar compra de hospedagem (informando código)")
         print("###############################################")
 
         opt = input("Digite a opção desejada: ")

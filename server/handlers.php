@@ -43,6 +43,20 @@ function search_passagem($key, $value) {
     return json_encode($resultArray);
 }
 
+function get_compra_passagem($id) {
+    $compraPassagensFile = COMPRA_PASSAGENS_FILE;
+    $contentCompras = read_file($compraPassagensFile);
+    $compras = json_decode($contentCompras, true);
+
+    if (!isset($compras[$id])) {
+        return json_encode(array(
+            "erro" => "Registro não existente!"
+        ));
+    }
+
+    return json_encode($compras["$id"]);
+}
+
 function post_passagem($data) {
     /*
     {
@@ -66,11 +80,19 @@ function post_passagem($data) {
         ));
     }
 
-    /* Caso a passagem não exista */
-    if (!isset($passagens[$data['id']])) {
-        criaLog("passagem => Passagem não encontrada");
+    /* Valida número de pessoas */
+    if (!is_numeric($data['n_pessoas']) || $data['n_pessoas'] < 1) {
+        criaLog("passagem => Número de pessoas incorreto!");
         return json_encode(array(
-            "erro" => "Passagem não encontrada"
+            "erro" => "Número de pessoas incorreto!"
+        ));
+    }
+
+    /* Valida número de parcelas */
+    if (!is_numeric($data['parcelas']) || $data['parcelas'] > 24) {
+        criaLog("passagem => Número de parcelas incorreto!");
+        return json_encode(array(
+            "erro" => "Número de parcelas incorreto!"
         ));
     }
 
@@ -88,6 +110,10 @@ function post_passagem($data) {
     $compra = array_merge($data, array(
         'data_hora_compra' => date('d/m/Y H:i:s')
     ));
+
+    /* Gerar código de compra */
+    $codigoPgto = generateCode();
+    $compra = array("$codigoPgto" => $compra);
 
     $contentCompras = read_file($compraPassagensFile);
     $compras = json_decode($contentCompras, true);
@@ -118,7 +144,8 @@ function post_passagem($data) {
     /* mensagem de sucesso */
     criaLog("passagem => Compra efetuada com sucesso");
     return json_encode(array(
-        "sucesso" => "Compra efetuada com sucesso!"
+        "sucesso" => "Compra efetuada com sucesso!",
+        "codigo" => "$codigoPgto"
     ));
 
 }
@@ -168,6 +195,20 @@ function search_hospedagem($key, $value) {
     return json_encode($resultArray);
 }
 
+function get_compra_hospedagem($id) {
+    $compraHospedagensFile = COMPRA_HOSPEDAGENS_FILE;
+    $contentCompras = read_file($compraHospedagensFile);
+    $compras = json_decode($contentCompras, true);
+
+    if (!isset($compras[$id])) {
+        return json_encode(array(
+            "erro" => "Registro não existente!"
+        ));
+    }
+
+    return json_encode($compras[$id]);
+}
+
 function post_hospedagem($data) {
     /*
     {
@@ -188,6 +229,22 @@ function post_hospedagem($data) {
         criaLog("hospedagem => Dados enviados incorretamente!");
         return json_encode(array(
             "erro" => "Dados enviados incorretamente!"
+        ));
+    }
+
+    /* Valida número de pessoas */
+    if (!is_numeric($data['n_pessoas']) || $data['n_pessoas'] < 1) {
+        criaLog("hospedagem => Número de pessoas incorreto!");
+        return json_encode(array(
+            "erro" => "Número de pessoas incorreto!"
+        ));
+    }
+
+    /* Valida número de parcelas */
+    if (!is_numeric($data['parcelas']) || $data['parcelas'] > 24) {
+        criaLog("hospedagem => Número de parcelas incorreto!");
+        return json_encode(array(
+            "erro" => "Número de parcelas incorreto!"
         ));
     }
 
@@ -212,6 +269,10 @@ function post_hospedagem($data) {
     $compra = array_merge($data, array(
         'data_hora_compra' => date('d/m/Y H:i:s')
     ));
+
+    /* Gerar código de compra */
+    $codigoPgto = generateCode();
+    $compra = array("$codigoPgto" => $compra);
 
     $contentCompras = read_file($compraHospedagensFile);
     $compras = json_decode($contentCompras, true);
@@ -238,8 +299,9 @@ function post_hospedagem($data) {
     }
 
     /* mensagem de sucesso */
-    criaLog("hospedagem => Compra efetuada com sucesso!");
+    criaLog("hospedagem => Compra efetuada com sucesso");
     return json_encode(array(
-        "sucesso" => "Compra efetuada com sucesso!"
+        "sucesso" => "Compra efetuada com sucesso!",
+        "codigo" => "$codigoPgto"
     ));
 }
