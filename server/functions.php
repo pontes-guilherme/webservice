@@ -29,7 +29,13 @@ function write_file($filePath, $content) {
         return false;
 
     $fp = fopen($filePath, 'w');
-    fwrite($fp, json_encode($content));
+
+    if (flock($fp, LOCK_EX)) { // do an exclusive lock
+        fwrite($fp, json_encode($content));
+        flock($fp, LOCK_UN); // release the lock
+    } else {
+        return false;
+    }
     fclose($fp);
 
     return true;
