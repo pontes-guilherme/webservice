@@ -11,7 +11,14 @@ function read_file($filePath) {
     if (!file_exists($filePath))
         return false;
 
-    $str = file_get_contents($filePath);
+    $fp = fopen($filePath, 'r');    
+
+    if (flock($fp, LOCK_SH)) { // do an shared lock
+        $str = file_get_contents($filePath);
+        flock($fp, LOCK_UN); // release the lock
+    } else {
+        return false;
+    }
 
     return $str;
 }

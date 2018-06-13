@@ -44,3 +44,8 @@
 [12/Jun/2018:21:00:35] (index) hospedagem => Compra efetuada com sucesso
 [12/Jun/2018:21:01:35] (index) hospedagem => Compra efetuada com sucesso
 [12/Jun/2018:21:04:03] (index) hospedagem => Número de pessoas incorreto!
+[13/Jun/2018:13:58:45] (index) passagem => Número de pessoas incorreto!
+[13/Jun/2018:14:00:57] (index) passagem => Compra efetuada com sucesso
+[13/Jun/2018:14:24:26] (index) passagem => Compra efetuada com sucesso
+[13/Jun/2018:14:24:54] (index) passagem => Compra efetuada com sucesso
+[13/Jun/2018:14:25:59] (index) hospedagem => Não há vagas suficientes

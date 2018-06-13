@@ -17,7 +17,7 @@ def main():
 			value = input("Digite o valor do campo de pesquisa:\n")
 
 			if (key is not "" and value is not ""):
-				req.handle_list_response(req.send_get(req.URL_GET_PASSAGEM + '/' + key + '/' + value))
+				req.handle_list_response(req.send_get(req.URL_GET_PASSAGEM + '/' + key.lower() + '/' + value.lower()))
 			else:
 				print("O campo e o valor de pesquisa devem ser informados")	
 
@@ -72,7 +72,7 @@ def main():
 			value = input("Digite o valor do campo de pesquisa:\n")
 
 			if (key is not "" and value is not ""):
-				req.handle_list_response(req.send_get(req.URL_GET_HOSPEDAGEM + '/' + key + '/' + value))
+				req.handle_list_response(req.send_get(req.URL_GET_HOSPEDAGEM + '/' + key.lower() + '/' + value))
 			else:
 				print("O campo e o valor de pesquisa devem ser informados")	
 
@@ -123,7 +123,8 @@ def main():
 				print("Um código deve ser digitado")
 
 			func.enter_to_continue()
-
+		elif opt == "0": #info compra passagem
+			break
 		else:
 			print("Opção inválida")
 			func.enter_to_continue()
