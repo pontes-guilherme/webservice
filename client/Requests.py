@@ -2,13 +2,13 @@ import requests as req
 from Functions import Functions as func
 
 class Requests:
-
+    #urls get passagem
     URL_GET_PASSAGEM = 'http://localhost/pacotes/server/passagem'
     URL_POST_PASSAGEM = 'http://localhost/pacotes/server/passagem/comprar'
-
+    #urls get hospedagem
     URL_GET_HOSPEDAGEM = 'http://localhost/pacotes/server/hospedagem'
     URL_POST_HOSPEDAGEM = 'http://localhost/pacotes/server/hospedagem/comprar'
-
+    #urls get compras
     URL_GET_COMPRA_PASSAGEM = 'http://localhost/pacotes/server/compras/passagem'
     URL_GET_COMPRA_HOSPEDAGEM = 'http://localhost/pacotes/server/compras/hospedagem'
 

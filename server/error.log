@@ -44,3 +44,6 @@
 [10-Jun-2018 12:55:37 America/Sao_Paulo] PHP Notice:  Undefined index: aaaa in C:\xampp\htdocs\pacotes\server\handlers.php on line 203
 [10-Jun-2018 12:57:07 America/Sao_Paulo] PHP Notice:  Undefined index: asdas in C:\xampp\htdocs\pacotes\server\handlers.php on line 203
 [10-Jun-2018 12:58:19 America/Sao_Paulo] PHP Notice:  Undefined index: aaa in C:\xampp\htdocs\pacotes\server\handlers.php on line 203
+[12-Jun-2018 20:49:51 America/Sao_Paulo] PHP Notice:  Undefined offset: 4 in C:\xampp\htdocs\pacotes\server\handlers.php on line 129
+[12-Jun-2018 21:04:53 America/Sao_Paulo] PHP Notice:  Undefined index: cidades in C:\xampp\htdocs\pacotes\server\handlers.php on line 240
+[12-Jun-2018 21:04:53 America/Sao_Paulo] PHP Notice:  Undefined index: cidades in C:\xampp\htdocs\pacotes\server\handlers.php on line 240

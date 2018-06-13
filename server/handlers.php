@@ -1,17 +1,28 @@
 <?php
 
+/**
+ * Lista de passagens
+ *
+ * @return string json contendo lista de passagens
+ */
 function get_passagens() {
     $passagensFile = PASSAGENS_FILE;
     return read_file($passagensFile);
 }
 
+/**
+ * Resgata uma passagem por id
+ *
+ * @param [integer] $id Id da passagem
+ * @return string json contendo informações da passagem
+ */
 function get_passagem($id) {
     $passagensFile = PASSAGENS_FILE;
 
     $content = read_file($passagensFile);
     $decoded_content = json_decode($content, true);
     
-    if (!isset($decoded_content[$id])) {
+    if (!isset($decoded_content["$id"])) {
         return json_encode(array(
             "erro" => "Registro não existente!"
         ));
@@ -20,6 +31,13 @@ function get_passagem($id) {
     return json_encode($decoded_content[$id]);
 }
 
+/**
+ * Filtro de passagem por chave -> valor
+ *
+ * @param [string] $key Chave da pesquisa
+ * @param [string] $value Valor do campo da pesquisa
+ * @return string json contendo resultado da pesquisa
+ */
 function search_passagem($key, $value) {
     $passagensFile = PASSAGENS_FILE;
 
@@ -29,8 +47,14 @@ function search_passagem($key, $value) {
     $resultArray = array();
 
     foreach($decoded_content as $i => $content) {
+        if (!isset($content[$key])) {
+            return json_encode(array(
+                "erro" => "Chave de busca inválida!"
+            ));    
+        }
+        
         if (strpos(strtolower($content[$key]), strtolower($value)) !== false) {
-            $resultArray[] = $content;
+            $resultArray[$i] = $content;
         }
     }
 
@@ -43,6 +67,12 @@ function search_passagem($key, $value) {
     return json_encode($resultArray);
 }
 
+/**
+ * Resgata uma compra feita, utilizando código
+ *
+ * @param [integer] $id Código da compra
+ * @return string json contendo conteúdo da compra
+ */
 function get_compra_passagem($id) {
     $compraPassagensFile = COMPRA_PASSAGENS_FILE;
     $contentCompras = read_file($compraPassagensFile);
@@ -57,6 +87,12 @@ function get_compra_passagem($id) {
     return json_encode($compras["$id"]);
 }
 
+/**
+ * Realiza compra de passagem
+ *
+ * @param [array] $data Array contendo os dados de compra
+ * @return string json contendo resposta da requisição
+ */
 function post_passagem($data) {
     /*
     {
@@ -93,6 +129,14 @@ function post_passagem($data) {
         criaLog("passagem => Número de parcelas incorreto!");
         return json_encode(array(
             "erro" => "Número de parcelas incorreto!"
+        ));
+    }
+
+    /* Caso a passagem não exista */
+    if (!isset($passagens[$data['id']])) {
+        criaLog("Passagem => não encontrada");
+        return json_encode(array(
+            "erro" => "Passagem não encontrada"
         ));
     }
 
@@ -152,11 +196,22 @@ function post_passagem($data) {
 
 /* ====================================================== */
 
+/**
+ * Lista hospedagens
+ *
+ * @return string json contendo todas as hospedagens
+ */
 function get_hospedagens() {
     $hospedagensFile = HOSPEDAGENS_FILE;
     return read_file($hospedagensFile);
 }
 
+/**
+ * Resgata uma hospedagem por id
+ *
+ * @param [integer] $id Id da hospedagem
+ * @return string json contendo resultado da requisição
+ */
 function get_hospedagem($id) {
     $hospedagensFile = HOSPEDAGENS_FILE;
 
@@ -172,6 +227,13 @@ function get_hospedagem($id) {
     return json_encode($decoded_content[$id]);
 }
 
+/**
+ * Filtro de hospedagem por chave -> valor
+ *
+ * @param [string] $key Chave da pesquisa
+ * @param [string] $value Valor do campo da pesquisa
+ * @return string json contendo resultado da pesquisa
+ */
 function search_hospedagem($key, $value) {
     $hospedagensFile = HOSPEDAGENS_FILE;
 
@@ -181,8 +243,14 @@ function search_hospedagem($key, $value) {
     $resultArray = array();
 
     foreach($decoded_content as $i => $content) {
+        if (!isset($content[$key])) {
+            return json_encode(array(
+                "erro" => "Chave de busca inválida!"
+            ));    
+        }
+
         if (strpos(strtolower($content[$key]), strtolower($value)) !== false) {
-            $resultArray[] = $content;
+            $resultArray[$i] = $content;
         }
     }
 
@@ -195,6 +263,12 @@ function search_hospedagem($key, $value) {
     return json_encode($resultArray);
 }
 
+/**
+ * Resgata uma compra pelo seu código
+ *
+ * @param [integer] $id Código da compra
+ * @return string json contendo conteúdo da compra
+ */
 function get_compra_hospedagem($id) {
     $compraHospedagensFile = COMPRA_HOSPEDAGENS_FILE;
     $contentCompras = read_file($compraHospedagensFile);
@@ -209,6 +283,12 @@ function get_compra_hospedagem($id) {
     return json_encode($compras[$id]);
 }
 
+/**
+ * Realiza compra de hospedagem
+ *
+ * @param [array] $data Array contendo os dados de compra
+ * @return string json contendo resposta da requisição
+ */
 function post_hospedagem($data) {
     /*
     {
@@ -250,7 +330,7 @@ function post_hospedagem($data) {
 
     /* Caso a passagem não exista */
     if (!isset($hospedagens[$data['id']])) {
-        criaLog("hospedagem => Hospedagem não encontrada");
+        criaLog("Hospedagem => não encontrada");
         return json_encode(array(
             "erro" => "Hospedagem não encontrada"
         ));

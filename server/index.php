@@ -126,7 +126,7 @@ $app->post('/hospedagem/comprar', function (Request $request, Response $response
 
 
 /**
- * GET /passagem/compra/{id}
+ * GET /compras/passagem/{id}
  * 
  * @return string conteúdo no formato JSON
  */
@@ -138,7 +138,7 @@ $app->get('/compras/passagem/{id}', function (Request $request, Response $respon
 });
 
 /**
- * GET /hospedagem/compra/{id}
+ * GET /compras/hospedagem/{id}
  * 
  * @return string conteúdo no formato JSON
  */
@@ -149,5 +149,5 @@ $app->get('/compras/hospedagem/{id}', function (Request $request, Response $resp
     return $response;
 });
 
-
+/* Inicializa o app */
 $app->run();

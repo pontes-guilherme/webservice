@@ -19,16 +19,18 @@ class Functions:
         """
 
         os.system('cls')
-        print("###############################################")
-        print("1 - Listar passagens")
-        print("2 - Informações da passagem (informando id):")
-        print("3 - Comprar passagem:")
-        print("4 - Listar hospedagens")
-        print("5 - Informações da hospedagem (informando id):")
-        print("6 - Comprar hospedagem")
-        print("7 - Consultar compra de passagem (informando código):")
-        print("8 - Consultar compra de hospedagem (informando código)")
-        print("###############################################")
+        print("#######################################################")
+        print("1  - Listar passagens")
+        print("2  - Informações da passagem (informando id)")
+        print("3  - Buscar passagens")
+        print("4  - Comprar passagem")
+        print("5  - Listar hospedagens")
+        print("6  - Buscar hospedagens")
+        print("7  - Informações da hospedagem (informando id)")
+        print("8  - Comprar hospedagem")
+        print("9  - Consultar compra de passagem (informando código)")
+        print("10 - Consultar compra de hospedagem (informando código)")
+        print("#######################################################")
 
         opt = input("Digite a opção desejada: ")
         print("\n")
@@ -49,7 +51,7 @@ class Functions:
         """
         
         for field in json:
-            if type(json[field]) == str:
+            if type(json[field]) == str or type(json[field]) == int:
                 print(" "*lvl,"%s: " % field, end="")
                 print("%s" % json[field])
             elif json[field] and type(json[field]) == dict:
